@@ -14,7 +14,7 @@ This is a React application showcasing various concepts such as Context API, sta
 
 1. Clone the repository:
 
-    git clone https://github.com/seu-usuario/sua-aplicacao.git
+    git clone https://github.com/jairodias/food-order-app
 
 2. Navigate to the project directory:
 
@@ -63,7 +63,3 @@ Refs provide a way to access DOM nodes or React elements created in the render m
 ### Proxies
 
 Proxies are a feature of JavaScript that allows you to intercept and customize operations performed on objects, such as property access, assignment, invocation, etc. They can be used for various purposes, including data validation, logging, and more.
-
-## License
-
-This project is licensed under the MIT License - see the LICENSE file for details.
