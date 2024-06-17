@@ -1,27 +1,23 @@
-import { useEffect, useState } from "react"
 import MealItem from "./MealItem"
+import useHttp from "../hooks/useHttp"
+import Error from "./Error"
+
+const configHttp = {}
 
 export default function MealsGrid() {
-  const [meals, setMeals] = useState([])
+  const {
+    data: meals,
+    isLoading,
+    error
+  } = useHttp('http://localhost:3000/meals', configHttp, [])
 
-  useEffect(() => {
-    async function getMeals() {
-      try {
-        const response = await fetch("http://localhost:3000/meals")
+  if (isLoading) {
+    return <p className="center">Fetching meals...</p>
+  }
 
-        if (!response.ok) {
-          console.error('Request failed.')
-        }
-
-        const meals = await response.json()
-        setMeals(meals)
-      } catch (error) {
-        console.error('Request failed.', error)
-      }
-    }
-
-    getMeals()
-  }, [])
+  if (error) {
+    return <Error title="Failed to fetch meals" message={error} />
+  }
 
   return (
     <ul id="meals">
