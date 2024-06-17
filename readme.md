@@ -18,7 +18,7 @@ This is a React application showcasing various concepts such as Context API, sta
 
 2. Navigate to the project directory:
 
-    cd sua-aplicacao
+    cd food-order-app
 
 3. Install dependencies:
 
